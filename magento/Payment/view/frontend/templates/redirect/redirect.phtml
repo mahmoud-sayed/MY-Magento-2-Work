@@ -1,0 +1,24 @@
+<?php
+/** @var \BestResponseMedia\Payment\Block\Redirect $block */
+?>
+<center>
+    <p>
+        <?php echo __('Thank you for your order. Redirecting you now.') ?>
+    </p>
+    <p>
+        <?php echo __('If you are not redirected within a few seconds, please <a href="#" id="mage_paymentweb_manual_submit">click here</a>.') ?>
+    </p>
+</center>
+<form name="mage_paymentweb_auto_submit" id="mage_paymentweb_auto_submit"
+      method="post" action="<?php echo $block->getPaymentModel()->getGatewayUrl() ?>" enctype="multipart/form-data">
+    <input type="hidden" name="payload" value="<?php echo $block->getPayload() ?>"/>
+    <input type="hidden" name="merchant_id" value="<?php echo $block->getPaymentModel()->getMerchantId() ?>"/>
+</form>
+<script type="text/javascript">
+    window.onload = function () {
+        document.getElementById("mage_paymentweb_auto_submit").submit();
+    }
+    document.getElementById("mage_paymentweb_manual_submit").addEventListener("click", function () {
+        document.getElementById("mage_paymentweb_auto_submit").submit();
+    });
+</script>

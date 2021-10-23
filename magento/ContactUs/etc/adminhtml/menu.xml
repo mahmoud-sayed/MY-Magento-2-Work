@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="BestResponseMedia_ContactUs::brm" title="BestResponseMedia" translate="title" module="BestResponseMedia_ContactUs" sortOrder="51" resource="BestResponseMedia_ContactUs::brm"/>
+        <add id="BestResponseMedia_ContactUs::options" title="Contact Us Subject Options" translate="title" module="BestResponseMedia_ContactUs" sortOrder="10" parent="BestResponseMedia_ContactUs::brm" action="contactus/options/index" resource="BestResponseMedia_ContactUs::options"/>
+
+    </menu>
+</config>
